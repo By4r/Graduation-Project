@@ -5,6 +5,7 @@ using Runtime.Data.ValueObjects;
 using Runtime.Signals;
 using Sirenix.OdinInspector;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Runtime.Controllers.Pool

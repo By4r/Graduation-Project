@@ -34,12 +34,12 @@ MonoBehaviour:
     - Boxophobic.PolyverseSkies.Runtime
     - Cinemachine
     - sc.stylizedwater2.runtime
+    - Boxophobic.PolyverseSkies.Scripts
     - Boxophobic.Utils.Scripts
     - sc.stylizedwater2.editor
-    - Boxophobic.PolyverseSkies.Scripts
     - Boxophobic.Utils.Editor
-    - PPv2URPConverters
     - Boxophobic.PolyverseSkies.Editor
+    - PPv2URPConverters
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
