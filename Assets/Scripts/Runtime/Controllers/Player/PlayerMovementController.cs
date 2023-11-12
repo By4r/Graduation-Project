@@ -11,18 +11,13 @@ namespace Runtime.Controllers.Player
         #region Self Variables
 
         #region Serialized Variables
-
-        [SerializeField] private new Rigidbody rigidbody;
-
+        
+        [SerializeField] public CharacterController characterController;
         #endregion
 
         #region Private Variables
 
         [ShowInInspector] private PlayerMovementData _data;
-        [ShowInInspector] private bool _isReadyToMove, _isReadyToPlay;
-        [ShowInInspector] private float _xValue;
-
-        private float2 _clampValues;
 
         #endregion
 
@@ -35,67 +30,17 @@ namespace Runtime.Controllers.Player
 
         private void FixedUpdate()
         {
-            if (!_isReadyToPlay)
-            {
-                StopPlayer();
-                return;
-            }
-
-            if (_isReadyToMove)
-            {
-                MovePlayer();
-            }
-            else
-            {
-                StopPlayerHorizontally();
-            }
-        }
-
-        private void StopPlayer()
-        {
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
-        }
-
-        private void StopPlayerHorizontally()
-        {
-            rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, _data.ForwardSpeed);
-            rigidbody.angularVelocity = Vector3.zero;
+            MovePlayer();
         }
 
         private void MovePlayer()
         {
-            var velocity = rigidbody.velocity;
-            velocity = new Vector3(_xValue * _data.SidewaySpeed, velocity.y, _data.ForwardSpeed);
-            rigidbody.velocity = velocity;
-            var position1 = rigidbody.position;
-            Vector3 position;
-            position = new Vector3(Mathf.Clamp(position1.x, _clampValues.x, _clampValues.y),
-                (position = rigidbody.position).y, position.z);
-            rigidbody.position = position;
-        }
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        internal void IsReadyToPlay(bool condition)
-        {
-            _isReadyToPlay = condition;
+            Vector3 move = transform.right * x + transform.forward * z;
+            characterController.Move(move * _data.ForwardSpeed * Time.deltaTime);
         }
-
-        internal void IsReadyToMove(bool condition)
-        {
-            _isReadyToMove = condition;
-        }
-
-        internal void UpdateInputParams(HorizontalInputParams inputParams)
-        {
-            _xValue = inputParams.HorizontalValue;
-            _clampValues = inputParams.ClampValues;
-        }
-
-        internal void OnReset()
-        {
-            StopPlayer();
-            _isReadyToMove = false;
-            _isReadyToPlay = false;
-        }
+        
     }
 }

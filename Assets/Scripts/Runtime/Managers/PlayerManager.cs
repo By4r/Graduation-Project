@@ -66,13 +66,13 @@ namespace Runtime.Managers
 
         private void SubscribeEvents()
         {
-            InputSignals.Instance.onInputTaken += () => movementController.IsReadyToMove(true);
-            InputSignals.Instance.onInputReleased += () => movementController.IsReadyToMove(false);
-            InputSignals.Instance.onInputDragged += OnInputDragged;
-            UISignals.Instance.onPlay += () => movementController.IsReadyToPlay(true);
-            CoreGameSignals.Instance.onLevelSuccessful += () => movementController.IsReadyToPlay(false);
-            CoreGameSignals.Instance.onLevelFailed += () => movementController.IsReadyToPlay(false);
-            CoreGameSignals.Instance.onStageAreaEntered += () => movementController.IsReadyToPlay(false);
+            // InputSignals.Instance.onInputTaken += () => movementController.IsReadyToMove(true);
+            // InputSignals.Instance.onInputReleased += () => movementController.IsReadyToMove(false);
+            // InputSignals.Instance.onInputDragged += OnInputDragged;
+            // UISignals.Instance.onPlay += () => movementController.IsReadyToPlay(true);
+            // CoreGameSignals.Instance.onLevelSuccessful += () => movementController.IsReadyToPlay(false);
+            // CoreGameSignals.Instance.onLevelFailed += () => movementController.IsReadyToPlay(false);
+            // CoreGameSignals.Instance.onStageAreaEntered += () => movementController.IsReadyToPlay(false);
             CoreGameSignals.Instance.onStageAreaSuccessful += OnStageAreaSuccessful;
             CoreGameSignals.Instance.onFinishAreaEntered += OnFinishAreaEntered;
             CoreGameSignals.Instance.onReset += OnReset;
@@ -80,13 +80,13 @@ namespace Runtime.Managers
 
         private void OnInputDragged(HorizontalInputParams inputParams)
         {
-            movementController.UpdateInputParams(inputParams);
+          //  movementController.UpdateInputParams(inputParams);
         }
 
         private void OnStageAreaSuccessful(byte value)
         {
             StageValue = ++value;
-            movementController.IsReadyToPlay(true);
+           // movementController.IsReadyToPlay(true);
             meshController.ScaleUpPlayer();
             meshController.PlayConfetiParticle();
             meshController.ShowUpText();
@@ -102,20 +102,20 @@ namespace Runtime.Managers
         private void OnReset()
         {
             StageValue = 0;
-            movementController.OnReset();
+            //movementController.OnReset();
             physicsController.OnReset();
             meshController.OnReset();
         }
 
         private void UnSubscribeEvents()
         {
-            InputSignals.Instance.onInputTaken -= () => movementController.IsReadyToMove(true);
-            InputSignals.Instance.onInputReleased -= () => movementController.IsReadyToMove(false);
-            InputSignals.Instance.onInputDragged -= OnInputDragged;
-            UISignals.Instance.onPlay -= () => movementController.IsReadyToPlay(true);
-            CoreGameSignals.Instance.onLevelSuccessful -= () => movementController.IsReadyToPlay(false);
-            CoreGameSignals.Instance.onLevelFailed -= () => movementController.IsReadyToPlay(false);
-            CoreGameSignals.Instance.onStageAreaEntered -= () => movementController.IsReadyToPlay(false);
+            // InputSignals.Instance.onInputTaken -= () => movementController.IsReadyToMove(true);
+            // InputSignals.Instance.onInputReleased -= () => movementController.IsReadyToMove(false);
+            // InputSignals.Instance.onInputDragged -= OnInputDragged;
+            // UISignals.Instance.onPlay -= () => movementController.IsReadyToPlay(true);
+            // CoreGameSignals.Instance.onLevelSuccessful -= () => movementController.IsReadyToPlay(false);
+            // CoreGameSignals.Instance.onLevelFailed -= () => movementController.IsReadyToPlay(false);
+            // CoreGameSignals.Instance.onStageAreaEntered -= () => movementController.IsReadyToPlay(false);
             CoreGameSignals.Instance.onStageAreaSuccessful -= OnStageAreaSuccessful;
             CoreGameSignals.Instance.onFinishAreaEntered -= OnFinishAreaEntered;
             CoreGameSignals.Instance.onReset -= OnReset;
