@@ -661,6 +661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7282406559574445234}
   - component: {fileID: 7550189686495969071}
+  - component: {fileID: 6346995089674763695}
   m_Layer: 5
   m_Name: LevelPanel
   m_TagString: Untagged
@@ -709,6 +710,19 @@ MonoBehaviour:
   levelTexts:
   - {fileID: 7282406559161290254}
   - {fileID: 7702745728444136079}
+--- !u!114 &6346995089674763695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282406559574445235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6853e4066b704ddfb53ea524e3831151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeController: {fileID: 5542996301309638204}
 --- !u!1 &7282406559960353193
 GameObject:
   m_ObjectHideFlags: 0
