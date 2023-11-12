@@ -9,22 +9,20 @@ namespace Runtime.Controllers.Camera
 {
     public class CameraController : MonoBehaviour
     {
-        
         #region Self Variables
 
         #region Serialized Variables
 
-        
         [SerializeField] private float mouseSensitivity;
         [SerializeField] private PlayerMovementController _playerMovementController;
-        
+
         #endregion
 
         #region Private Variables
 
-         private PlayerMovementData _data;
-         private float xRotation;
-         private float2 _clampValues;
+        private PlayerMovementData _data;
+        private float xRotation;
+        private float2 _clampValues;
 
         #endregion
 
@@ -37,9 +35,9 @@ namespace Runtime.Controllers.Camera
 
         private void LateUpdate()
         {
-          MoveMouseAxis();
+            MoveMouseAxis();
         }
-        
+
         private void RemoveMouseCursor()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -52,11 +50,10 @@ namespace Runtime.Controllers.Camera
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-            
-            transform.localRotation=Quaternion.Euler(xRotation,0f,0f);
-            
-            _playerMovementController.characterController.transform.Rotate(Vector3.up*mouseX);
+
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+            _playerMovementController.characterController.transform.Rotate(Vector3.up * mouseX);
         }
     }
 }
-    

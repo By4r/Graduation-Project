@@ -1,9 +1,8 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Runtime.Controllers.Time
+namespace Runtime.Controllers.PlayTime
 {
     public class TimeController : MonoBehaviour
     {
@@ -26,8 +25,7 @@ namespace Runtime.Controllers.Time
         {
             if (isCounting)
             {
-                currentTime -= UnityEngine.Time.deltaTime;
-                //currentTime -= Time.deltaTime;
+                currentTime -= Time.deltaTime;
 
                 if (currentTime <= 0f)
                 {
