@@ -1,4 +1,4 @@
-﻿using Cinemachine;
+﻿
 using Runtime.Signals;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,7 +11,7 @@ namespace Runtime.Managers
 
         #region Serialized Variables
 
-        [SerializeField] private CinemachineVirtualCamera virtualCamera;
+       // [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
         #endregion
 
@@ -47,7 +47,7 @@ namespace Runtime.Managers
         private void OnSetCameraTarget()
         {
             var player = FindObjectOfType<PlayerManager>().transform;
-            virtualCamera.Follow = player;
+            // virtualCamera.Follow = player;
             //virtualCamera.LookAt = player;
         }
 
