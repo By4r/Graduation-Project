@@ -80,7 +80,13 @@ namespace Runtime.Managers
 
         private void Update()
         {
-            if (!_isAvailableForTouch) return;
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                TimeSignals.Instance.onTimeStarted?.Invoke();
+            }
+
+
+            /*if (!_isAvailableForTouch) return;
 
             if (Input.GetMouseButtonUp(0) && !IsPointerOverUIElement())
             {
@@ -127,7 +133,7 @@ namespace Runtime.Managers
                         });
                     }
                 }
-            }
+            }*/
         }
 
         private bool IsPointerOverUIElement()

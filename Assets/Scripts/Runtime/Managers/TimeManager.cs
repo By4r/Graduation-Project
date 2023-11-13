@@ -17,11 +17,6 @@ namespace Runtime.Managers
 
         #endregion
 
-        private void Awake()
-        {
-            
-        }
-        
         private void OnEnable()
         {
             SubscribeEvents();

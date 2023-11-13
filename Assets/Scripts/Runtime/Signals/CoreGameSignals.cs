@@ -21,7 +21,5 @@ namespace Runtime.Signals
         public UnityAction<byte> onStageAreaSuccessful = delegate { };
         public UnityAction onStageAreaEntered = delegate { };
         public UnityAction onFinishAreaEntered = delegate { };
-        public UnityAction onMiniGameAreaEntered = delegate { };
-        public UnityAction onMultiplierAreaEntered = delegate { };
     }
 }
