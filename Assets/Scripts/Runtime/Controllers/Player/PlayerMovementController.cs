@@ -48,8 +48,15 @@ namespace Runtime.Controllers.Player
             {
                 Vector3 run =  transform.forward;
                 characterController.Move(run * _data.SprintSpeed * Time.deltaTime);
+<<<<<<< HEAD
             }
 
+=======
+            } 
+           
+
+          
+>>>>>>> b729d6ddb42f5cd76888e144cc097f7e5a70f447
         }
         
     }
