@@ -5,7 +5,6 @@ namespace Runtime.Enums
         Start,
         Level,
         Win,
-        Fail,
-        Player
+        Fail
     }
 }
