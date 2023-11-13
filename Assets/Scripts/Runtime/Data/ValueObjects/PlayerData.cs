@@ -7,8 +7,6 @@ namespace Runtime.Data.ValueObjects
     public struct PlayerData
     {
         public PlayerMovementData MovementData;
-        public PlayerMeshData MeshData;
-        public PlayerForceData ForceData;
     }
 
     [Serializable]
@@ -16,17 +14,5 @@ namespace Runtime.Data.ValueObjects
     {
         public float ForwardSpeed;
         public float SprintSpeed;
-    }
-
-    [Serializable]
-    public struct PlayerMeshData
-    {
-        public float ScaleCounter;
-    }
-
-    [Serializable]
-    public struct PlayerForceData
-    {
-        public float3 ForceParameters;
     }
 }

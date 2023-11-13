@@ -15,6 +15,7 @@ MonoBehaviour:
   Data:
     MovementData:
 <<<<<<< HEAD
+<<<<<<< HEAD
       ForwardSpeed: 16
       SprintSpeed: 0
     MeshData:
@@ -28,3 +29,7 @@ MonoBehaviour:
       ForwardSpeed: 10
       SprintSpeed: 20
 >>>>>>> parent of 22a8a62 (Revert "Crosshair and Sprint added")
+=======
+      ForwardSpeed: 10
+      SprintSpeed: 20
+>>>>>>> 8b0cdd26674b2ab28bb8d9917af2c47fb09cc5f5
